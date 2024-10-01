@@ -10,6 +10,7 @@ const Chat = () => {
   const [user, setuser] = useState(null)
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 const navigate = useNavigate()
   useEffect(() => {
     const q = query(collection(firestore, 'messages'), orderBy('createdAt', 'asc'));
@@ -64,12 +65,23 @@ useEffect(()=>{
       console.error('Error signing out:', error);
     }
   };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+    
+  };
   return (
-    <div>
+    <div className='bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] min-h-screen'>
       {}
       {user ? (
-  <>
-    <div>Logged in as {user.displayName}</div>
+  <div>
+    <div className='bg-gray-400 h-[50px] flex justify-between items-center px-5'>
+<p className='font-bold'>Logged in as {user.displayName} </p>
+<button className='bg-blue-500 px-6 py-3 text-white font-bold rounded-md'
+onClick={()=> setShowModal(true)}
+>Log Out</button>
+
+    </div>
     <div className="messages-container" style={{ height: '700px', overflowY: 'auto', border: '1px solid #ccc', padding: '10px' }}>
       {messages.map((msg) => {
         if (!msg || !user) return null;
@@ -115,13 +127,30 @@ useEffect(()=>{
         style={{ padding: '10px', width: '80%', borderRadius: '5px', border: '1px solid #ccc' }}
       />
       <button type="submit" style={{ padding: '10px', marginLeft: '10px' }}>Send</button>
-      <button type="button" onClick={handleLogout} style={{ padding: '10px', marginLeft: '10px' }}>Log Out</button>
+     
     </form>
-  </>
+  </div>
 ) : (
   <Link to="/login">Login</Link>
 )}
-      {}
+        {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-8 rounded-lg text-center">
+            <h2 className="text-lg font-bold">Are you sure you want to Log Out?</h2>
+            {/* <p>Are you sure you want to Sign Out?</p> */}
+             <div className='flex gap-4 items-center justify-center'>
+               <button type="button"  className="mt-4 p-2 px-5 bg-blue-500 text-white rounded-lg" onClick={handleLogout}>Log Out</button>
+                           <button
+                className="mt-4 p-2 px-5 bg-blue-500 text-white rounded-lg"
+                onClick={handleModalClose}
+                           >
+                Go back
+                           </button>
+             </div>
+          </div>
+        </div>
+      )}
+    
     </div>
   );
 };
