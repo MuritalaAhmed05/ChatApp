@@ -229,9 +229,9 @@ export default function Register() {
             Sign In
           </Link>
           </p>
-            <Auth/>
           
         </form>
+            <Auth/>
         
       </div>
 

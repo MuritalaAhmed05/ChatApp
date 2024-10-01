@@ -28,14 +28,4 @@ root.render(
   </React.StrictMode>
 );
 
-// import { signOut } from 'firebase/auth';
 
-// const handleLogout = async () => {
-//   try {
-//     await signOut(auth);
-//     console.log('User signed out');
-//     // Redirect to login page or show a message
-//   } catch (error) {
-//     console.error('Error signing out:', error);
-//   }
-// };
