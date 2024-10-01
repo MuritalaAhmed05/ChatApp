@@ -105,10 +105,10 @@ export default function Register() {
         </h1>
       </div>
       <div className="sm:w-1/2 w-full  bg-black text-white flex flex-col justify-center items-start px-9">
-        <h1 className="text-[2rem] font-bold text-left self-left pl-8">
+        <h1 className="text-[2rem] font-bold text-left self-left pl-0">
           SignUp
         </h1>
-        <p className="pl-8 text-[12px]">Let's sign up quickly to get started</p>
+        <p className="pl-0 text-[12px]">Let's sign up quickly to get started</p>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col space-y-8 py-8 sm:px-9 px-0 w-full"

@@ -37,7 +37,7 @@ const Login = () => {
           setError("The email or password is incorrect.");
           break;
         case "auth/invalid-email":
-          setError("The email address is badly formatted.");
+          setError("Please enter an email address.");
           break;
         case "auth/weak-password":
           setError("Password should be at least 6 characters.");
