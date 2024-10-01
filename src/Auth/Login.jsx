@@ -43,7 +43,7 @@ const Login = () => {
           setError("Password should be at least 6 characters.");
           break;
         default:
-          setError("Failed to sign up. Please try again.");
+          setError("Failed to sign in. Please try again.");
       }
     } finally {
       setLoading(false);

@@ -111,7 +111,7 @@ export default function Register() {
         <p className="pl-8 text-[12px]">Let's sign up quickly to get started</p>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col space-y-8 py-8 sm:px-9 px-1 w-full"
+          className="flex flex-col space-y-8 py-8 sm:px-9 px-0 w-full"
         >
           <label htmlFor="username" className="flex flex-col">
             <span className="text-xs text-gray-500 font-semibold">

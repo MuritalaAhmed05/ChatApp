@@ -23,7 +23,7 @@ export default function Auth() {
         <button
         onClick={signInWithGoogle}
         className='text-white '
-        >signUpWithGoogle</button>
+        >Continue With Google</button>
     </div>
   )
 }

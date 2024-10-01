@@ -32,7 +32,7 @@ const Reset = () => {
 
           break;
         default:
-          setError("Failed to sign up. Please try again.");
+          setError("Failed to send mail. Please try again.");
       }
     }
   };
@@ -56,7 +56,7 @@ const Reset = () => {
         </p>
         <form
           onSubmit={handlePasswordReset}
-          className="flex flex-col space-y-8 py-8 sm:px-9 px-1 w-full"
+          className="flex flex-col space-y-8 py-8 sm:px-9 px-0 w-full"
         >
           <label htmlFor="Email" className="flex flex-col">
             <span className="text-xs text-gray-500 font-semibold">Email:</span>
