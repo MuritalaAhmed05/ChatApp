@@ -146,7 +146,11 @@ const Chat = () => {
           </form>
         </div>
       ) : (
-        <Link to="/login">Login</Link>
+        <div className="flex justify-center items-center min-h-screen text-white">
+          <Link to="/login"
+          className="bg-blue-600 px-6 py-3 rounded-xl font-bold text-2xl"
+          >Click here to  Login</Link>
+        </div>
       )}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
