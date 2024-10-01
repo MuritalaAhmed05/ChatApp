@@ -96,28 +96,29 @@ const Chat = () => {
               Log Out
             </button>
           </div>
-          <div
-            className="p-3 min-h-screen overflow-y-auto-"
-           
-          >
+          <div className="p-3 min-h-screen overflow-y-auto-">
             {messages.map((msg) => {
               if (!msg || !user) return null;
               const isCurrentUser = msg.userId === user.uid;
               return (
                 <div
                   key={msg.id}
-                  className={`message ${isCurrentUser ? "current" : "other"} flex  mb-2 ${isCurrentUser ? "justify-end" : "justify-start"}` }
-                                 >
+                  className={`message ${
+                    isCurrentUser ? "current" : "other"
+                  } flex  mb-2 ${
+                    isCurrentUser ? "justify-end" : "justify-start"
+                  }`}
+                >
                   <div
-                  
-                    className={`text-left p-3 max-w-[60%] rounded-md ${isCurrentUser ? 'bg-lightGreen' : 'bg-customWhite'} break-words` }
+                    className={`text-left p-3 max-w-[60%] rounded-md ${
+                      isCurrentUser ? "bg-lightGreen" : "bg-customWhite"
+                    } break-words`}
                   >
                     <img
                       src={
                         msg.photoURL || "https://files.catbox.moe/ycindm.jpg"
                       }
                       alt="User avatar"
-                    
                       className="w-[30px] h-[30px] rounded-full mr-2"
                     />
                     <strong>{msg.username}:</strong> {msg.message}
@@ -126,26 +127,20 @@ const Chat = () => {
               );
             })}
           </div>
-          <form
-            onSubmit={handleSubmit}
-            
-            className="mt-[20px] flex"
-          >
+          <form onSubmit={handleSubmit} className="mt-[20px] flex">
             <div className="flex w-full mb-2 px-3 gap-4">
               <input
                 type="text"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Type a message..."
-                className=" text-white p-3 rounded-full w-full outline-none bg-[#676393] border border-gray-400"
+                className="text-white p-3 rounded-full w-full outline-none bg-[#676393] border border-gray-400"
               />
               <button
                 type="submit"
-                
-                className="bg-white p-3 flex justify-center items-center rounded-[50%]  "
+                className="bg-white p-3 flex justify-center items-center rounded-full w-12 h-12" // Fixed width and height for circular shape
               >
-                
-              <BsFillSendFill />
+                <BsFillSendFill className="w-6 h-6" /> {/* Adjust icon size */}
               </button>
             </div>
           </form>
