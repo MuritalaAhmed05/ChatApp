@@ -54,7 +54,7 @@ useEffect(()=>{
           userId: uid,
           username: displayName || "Anonymous", // Save display name or default to Anonymous
           message,
-          photoURL : user.photoURL,
+          photoURL : photoURL,
           createdAt: serverTimestamp(), // Use Firestore server timestamp
         });
         setMessage(''); // Clear the input after sending
@@ -112,7 +112,7 @@ useEffect(()=>{
               }}
             >
               <img
-                src={msg.photoURL || 'default-avatar.png'}
+                src={user.photoURL || 'https://files.catbox.moe/ycindm.jpg'}
                 alt="User avatar"
                 style={{ width: '30px', height: '30px', borderRadius: '50%', marginRight: '10px' }}
               />
