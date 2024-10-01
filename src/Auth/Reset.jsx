@@ -47,7 +47,7 @@ const Reset = () => {
           Welcome to Ahmed's Chat App
         </h1>
       </div>
-      <div className="sm:w-1/2 w-full  bg-black text-white flex flex-col justify-center items-start px-9">
+      <div className="sm:w-1/2 w-full  bg-black text-white flex flex-col justify-center items-start px-5 md:px-7 lg:px-[7rem] sm:px-5">
         <h1 className="text-[2rem] font-bold text-left self-left pl-0">
           Reset Password
         </h1>
@@ -56,7 +56,7 @@ const Reset = () => {
         </p>
         <form
           onSubmit={handlePasswordReset}
-          className="flex flex-col space-y-8 py-8 sm:px-9 px-0 w-full"
+          className="flex flex-col space-y-8 py-8  w-full"
         >
           <label htmlFor="Email" className="flex flex-col">
             <span className="text-xs text-gray-500 font-semibold">Email:</span>
