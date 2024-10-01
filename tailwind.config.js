@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}", // Adjust this path if your files are in a different directory
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        lightGreen: '#DCF8C6',
+        customWhite: '#FFFFFF', 
+      },
+    },
   },
   plugins: [],
 }
